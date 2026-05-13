@@ -3,8 +3,71 @@
     <head>
         <meta charset="UTF-8">
         <title>Penguin Game</title>
+        <style>
+        /*tarayıcı kenar boşluklarını ve kaydırma çubuklarını gizler.*/
+            body {
+            margin: 0;
+            overflow: hidden; 
+            background-color: #071827;
+            }
+            canvas {
+            display: block;
+            }
+        </style>
     </head>
     <body>
         <canvas id="game"></canvas>
+
+        <script>
+            window.bgMusic = new Audio("sounds/sarki.mp3");
+            window.bgMusic.loop = true;  
+            window.bgMusic.volume = 0.6; 
+
+            window.victorySound = new Audio("sounds/ypie.mp3");
+            window.victorySound.loop = false; 
+            window.victorySound.volume = 1.0; 
+
+            window.boxBreakSound = new Audio("sounds/buzkirma.mp3");
+            window.boxBreakSound.loop = false;
+            window.boxBreakSound.volume = 0.8;
+        </script>
+
+        <script src="src/menu.js"></script>
+        <script src="src/bolum1.js"></script>
+
+        <script>
+            window.onload = function() {
+                // Menüye dönme fonksiyonunu global olarak tanımlıyoruz
+                window.returnToMenu = function() {
+                    if(window.bgMusic) {
+                        window.bgMusic.pause();
+                        window.bgMusic.currentTime = 0;
+                    }
+                
+                    // Menüyü başlat ve buton görevlerini ata
+                    startMenu(
+                        // "OYUNA BAŞLA" butonu
+                        function() { startBolum1(window.returnToMenu); }, 
+                        
+                        // "BÖLÜM SEÇ" ekranındaki butonlar
+                        function(level) { 
+                            if(level === 1) {
+                                startBolum1(window.returnToMenu); 
+                            }
+                            else if(level === 2) {
+                                alert("Bu bölüm henüz hazır değil!"); 
+                            }
+                            else if(level === 3) {
+                                alert("Bu bölüm henüz hazır değil!");
+                            }
+                        }
+                    );
+                
+                };
+
+                // Sayfa yüklendiğinde ilk olarak menüyü aç
+                window.returnToMenu();
+            };
+        </script>
     </body>
 </html>
