@@ -69,7 +69,7 @@ Her bölümde farklı sayıda kutu, platform ve engel bulunur. Bölümler ilerle
 |---|---|
 | `A` / `←` | Sola hareket |
 | `D` / `→` | Sağa hareket |
-| `Space` / `W` / `↑` | Zıplama |
+| `Space` | Zıplama |
 | Kutulara temas | Kutuları kırma / itme |
 | Kapı ve düğmeler | Bölüm mekaniklerini aktifleştirme |
 
