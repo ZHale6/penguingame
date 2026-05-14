@@ -209,9 +209,9 @@ window.startBolum1 = function(onComplete) {
                 createBreakEffect(box.x + box.width / 2, box.y + box.height / 2);
                 
                 //buz kırılma sesini çalar eğer ses dosyası yoksa hata mesajı verir.
-                if(window.snowBreakSound) {
-                    window.snowBreakSound.currentTime = 0; // Hızlı kırılmalarda sesin kesilmeden baştan başlaması için
-                    window.snowBreakSound.play().catch(e => console.log("Buz sesi çalınamadı:", e));
+                if(window.boxBreakSound) {
+                    window.boxBreakSound.currentTime = 0; // Hızlı kırılmalarda sesin kesilmeden baştan başlaması için
+                    window.boxBreakSound.play().catch(e => console.log("Buz sesi çalınamadı:", e));
                 }
             }
         });

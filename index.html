@@ -38,36 +38,25 @@
         <script src="src/bolum3.js"></script>
 
         <script>
-            window.onload = function() {
-                // Menüye dönme fonksiyonunu global olarak tanımlıyoruz
-                window.returnToMenu = function() {
-                    if(window.bgMusic) {
-                        window.bgMusic.pause();
-                        window.bgMusic.currentTime = 0;
-                    }
-                
-                    // Menüyü başlat ve buton görevlerini ata
-                    startMenu(
-                        // "OYUNA BAŞLA" butonu
-                        function() { startBolum1(window.returnToMenu); }, 
-                        
-                        // "BÖLÜM SEÇ" ekranındaki butonlar
-                        function(level) { 
-                            if(level === 1) {
-                                startBolum1(window.returnToMenu); 
-                            }
-                            else if(level === 2) {
-                                startBolum2(window.returnToMenu);  
-                            }
-                            else if(level === 3) {
-                                startBolum3(window.returnToMenu);
-                            }
-                        }
-                    );
-                
-                };
+            window.returnToMenu = function() {
+                startMenu(function() {
+                    startBolum1(onLevel1Complete);
+                }, function(levelNumber) {
+                    if (levelNumber === 1) startBolum1(onLevel1Complete);
+                    if (levelNumber === 2) startBolum2(onLevel2Complete);
+                    if (levelNumber === 3) startBolum3();
+                });
+            };
 
-                // Sayfa yüklendiğinde ilk olarak menüyü aç
+            function onLevel1Complete() {
+                startBolum2(onLevel2Complete);
+            }
+
+            function onLevel2Complete() {
+                startBolum3();
+            }
+
+            window.onload = function() {
                 window.returnToMenu();
             };
         </script>
