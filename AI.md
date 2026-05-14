@@ -1,6 +1,6 @@
 # AI Kullanım Raporu
 
-Bu projeyi geliştirirken bazı teknik konularda yapay zeka araçlarından destek aldık. Yapay zekayı projenin tamamını yaptırmak için değil; takıldığımız noktalarda fikir almak, hata ayıklamak, performans sorunlarını çözmek ve oyun mekaniklerini daha düzenli hale getirmek için kullandık.
+Bu projeyi geliştirirken bazı teknik konularda yapay zeka araçlarından destek aldık.
 
 Kullanılan yapay zeka araçları: **Gemini ve ChatGPT**
 
@@ -19,7 +19,7 @@ Karakterin hareket hızını sabit bir piksel değeri yerine geçen zamana (Delt
 ## 2. Platformlarda Yer Çekimi ve Fizik Mantığı
 
 **Prompt:**  
-JavaScript ile yaptığım 2D platform oyununda karakterin gerçekçi şekilde yere düşmesi ve platformların içinden geçmeyip üstünde durması için yer çekimi mantığını nasıl kurabiliriz?
+JavaScript ile yaptığımız 2D platform oyununda karakterin gerçekçi şekilde yere düşmesi ve platformların içinden geçmeyip üstünde durması için yer çekimi mantığını nasıl kurabiliriz?
 
 **Cevap:**  
 Karakter için dikey hız (velocity Y) değeri tutulmalıdır. Her oyun döngüsünde bu hıza küçük bir yer çekimi (gravity) değeri eklenir. Karakter aşağı düşerken alt kenarı ile platformun üst kenarı kesişiyorsa dikey hız sıfırlanır ve karakterin y konumu platformun üstüne sabitlenir.
@@ -86,6 +86,14 @@ Bir State Machine (Durum Makinesi) kurgulayabilirsiniz. Mevcut durumu tutan tek 
 
 ---
 
+## 9. Oyun Menüsü Arkaplan Tasarımı
+
+**Prompt:**
+A minimalist flat vector background for a game menu titled 'Penguin Adventure'. The style is clean and modern, matching a winter night theme. Deep navy blue night sky with many tiny white circular snowflakes. At the bottom, dark teal geometric triangular mountains. In the lower left corner, a cute small penguin stands on a light blue floating ice platform. In the far distance on the right, a tiny glowing white igloo. The center of the image is left mostly empty/clear to accommodate menu buttons. Vector art style, no text, smooth gradients, consistent with the provided game screenshots.
+
+**Cevap:**
+Oyun menü arkaplanı oluşturuldu.
+
 ## Genel Değerlendirme
 
-Yapay zeka araçları, özellikle oyun motoru döngüsü (game loop) optimizasyonu, AABB çarpışma algoritmaları, fizik kuralları ve oyun akış mantığını (durum makinesi) kurgulamak için danışman olarak kullanıldı. Alınan teorik tavsiyelerin kod projesine uyarlanması, platform spesifik mekaniklerin (iglo, penguen, buton) birleştirilmesi ve hataların giderilmesi tamamen tarafımızdan test edilerek yapıldı.
+Yapay zeka araçları, özellikle oyun motoru döngüsü (game loop) optimizasyonu, AABB çarpışma algoritmaları, fizik kuralları ve oyun akış mantığını (durum makinesi) kurgulamak için danışman olarak kullanıldı.
