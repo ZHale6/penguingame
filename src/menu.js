@@ -61,7 +61,7 @@ window.startMenu = function(onStart, onLevelSelect) {
             ctx.font = "bold 65px Arial";
             ctx.shadowColor = "rgba(0, 0, 0, 0.8)";
             ctx.shadowBlur = 10;
-            ctx.fillText("PENGUIN ADVENTURE", canvas.width / 2, canvas.height / 2 - 100);
+            ctx.fillText("PENGUENİN MACERALARI", canvas.width / 2, canvas.height / 2 - 100);
             ctx.shadowBlur = 0;
 
             drawButton(buttons.start, canvas.width / 2, canvas.height / 2);
